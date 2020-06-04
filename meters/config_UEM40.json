@@ -1,0 +1,92 @@
+{
+  "tag": "Enel-meter",
+  "address": 2,
+  "port": "/dev/ttyUSB0",
+  "mode": "rtu",
+  "baudrate": 9600,
+  "timeout": 0.3,
+  "sleep-response": 0.06,
+  "commands": {
+
+    "VOLTAGE": {
+      "fn-code": 3,
+      "register": "1000",
+      "signed": false,
+      "type": "IEEE",
+      "unit": "V"
+    },
+
+    "CURRENT": {
+      "fn-code": 3,
+      "register": "1016",
+      "signed": true,
+      "type": "IEEE",
+      "unit": "A"
+    },
+
+    "POWER_FACTOR": {
+      "fn-code": 3,
+      "register": "101E",
+      "signed": true,
+      "type": "IEEE",
+      "unit": null
+    },
+
+    "ACTIVE_POWER": {
+      "fn-code": 3,
+      "register": "1026",
+      "signed": true,
+      "type": "IEEE",
+      "unit": "W"
+    },
+
+    "APPARENT_POWER": {
+      "fn-code": 3,
+      "register": "102E",
+      "signed": true,
+      "type": "IEEE",
+      "unit": "VA"
+    },
+
+    "REACTIVE_POWER": {
+      "fn-code": 3,
+      "register": "1036",
+      "signed": true,
+      "type": "IEEE",
+      "unit": "VAr"
+    },
+
+    "IMPORT_ACTIVE_ENERGY": {
+      "fn-code": 3,
+      "register": "1106",
+      "signed": false,
+      "type": "IEEE",
+      "unit": "Wh"
+    },
+
+    "EXPORT_ACTIVE_ENERGY": {
+      "fn-code": 3,
+      "register": "110E",
+      "signed": false,
+      "type": "IEEE",
+      "unit": "Wh"
+    },
+
+    "IMPORT_REACTIVE_ENERGY": {
+      "fn-code": 3,
+      "register": "1136",
+      "signed": false,
+      "type": "IEEE",
+      "unit": "varh"
+    },
+
+    "EXPORT_REACTIVE_ENERGY": {
+      "fn-code": 3,
+      "register": "113E",
+      "signed": false,
+      "type": "IEEE",
+      "unit": "varh"
+    }
+
+  }
+}

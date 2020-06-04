@@ -1,0 +1,68 @@
+{
+  "tag": "Solar-meter",
+  "address": 1,
+  "port": "/dev/ttyUSB0",
+  "mode": "rtu",
+  "baudrate": 9600,
+  "timeout": 0.3,
+  "sleep-response": 0.06,
+  "commands": {
+
+    "VOLTAGE": {
+      "fn-code": 4,
+      "register": "0000",
+      "signed": true,
+      "type": "IEEE",
+      "unit": "V"
+    },
+
+    "CURRENT": {
+      "fn-code": 4,
+      "register": "0006",
+      "signed": true,
+      "type": "IEEE",
+      "unit": "A"
+    },
+
+    "POWER_FACTOR": {
+      "fn-code": 4,
+      "register": "001E",
+      "signed": true,
+      "type": "IEEE",
+      "unit": null
+    },
+
+    "ACTIVE_POWER": {
+      "fn-code": 4,
+      "register": "000C",
+      "signed": true,
+      "type": "IEEE",
+      "unit": "W"
+    },
+
+    "APPARENT_POWER": {
+      "fn-code": 4,
+      "register": "0012",
+      "signed": true,
+      "type": "IEEE",
+      "unit": "VA"
+    },
+
+    "REACTIVE_POWER": {
+      "fn-code": 4,
+      "register": "0018",
+      "signed": true,
+      "type": "IEEE",
+      "unit": "VAr"
+    },
+
+    "TOTAL_ACTIVE_ENERGY": {
+      "fn-code": 4,
+      "register": "0156",
+      "signed": true,
+      "type": "IEEE",
+      "unit": "kWh"
+    }
+
+  }
+}
