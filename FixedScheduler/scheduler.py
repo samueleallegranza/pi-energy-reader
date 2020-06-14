@@ -65,6 +65,7 @@ class Scheduler():
             for task in self._tasks:
                 #Check if the current time (epoch format) is a multiple of the seconds of the task
                 if(current_second % task['seconds'] == 0):
-                    task['function'](*task['arguments'])    #Task is executed with arguments unpacked
+                    threading.Thread(target=task['function'], args=task['arguments']).start()
+                    # task['function'](*task['arguments'])    #Task is executed with arguments unpacked
                 else:
                     pass                                    #Task is not executed

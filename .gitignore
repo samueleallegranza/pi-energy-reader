@@ -1,3 +1,6 @@
 venv
+__pycache__
 U_modbus/__pycache__
 FixedScheduler/__pycache__
+AutoPriorityQueue/__pycache__
+config/mqtt/config_BROKER.json
