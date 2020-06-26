@@ -1,0 +1,19 @@
+{
+    "name": "live-energy",
+    "interval": 1,
+    "mqtt_subtopic": "liveEnergy",
+    "actions": [
+        {
+            "meter": "Solar-meter",
+            "command": "ACTIVE_POWER",
+            "json_field": "liveSolar",
+            "priority": 1
+        },
+        {
+            "meter": "Enel-meter",
+            "command": "ACTIVE_POWER",
+            "json_field": "liveEnel",
+            "priority": 1
+        }
+    ]
+}

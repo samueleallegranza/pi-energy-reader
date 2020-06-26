@@ -5,7 +5,7 @@ import time
 
 
 # Fixed Scheduler class
-class Scheduler():
+class FixedScheduler():
     
     # Constructor.
     #   > precision:    delay between every check.

@@ -3,7 +3,7 @@ import threading
 import time
 
 # Automatic PriorityQueue Class
-class Queue():
+class APQueue():
 
     # Constructor
     def __init__(self):        

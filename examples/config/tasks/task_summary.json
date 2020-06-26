@@ -1,0 +1,25 @@
+{
+    "name": "summary-energy",
+    "interval": 60,
+    "mqtt_subtopic": "summaryEnergy",
+    "actions": [
+        {
+            "meter": "Solar-meter",
+            "command": "TOTAL_ACTIVE_ENERGY",
+            "json_field": "solarIn",
+            "priority": 1
+        },
+        {
+            "meter": "Enel-meter",
+            "command": "IMPORT_ACTIVE_ENERGY",
+            "json_field": "enelIn",
+            "priority": 1
+        },
+        {
+            "meter": "Enel-meter",
+            "command": "EXPORT_ACTIVE_ENERGY",
+            "json_field": "enelOut",
+            "priority": 1
+        }
+    ]
+}
