@@ -1,0 +1,16 @@
+[Unit]
+Description=EnergyReader
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+ExecStart=/home/pi/piEnergyReader/venv/bin/python3 -u start.py
+WorkingDirectory=/home/pi/piEnergyReader
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+RestartSec=1
+User=pi
+
+[Install]
+WantedBy=multi-user.target
