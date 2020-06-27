@@ -1,4 +1,4 @@
-import json
+import json, time, sys
 import paho.mqtt.client as mqtt
 
 class Connection():
@@ -15,11 +15,25 @@ class Connection():
         self.mqtt_client.on_log = self.on_log
 
     def open(self):
-        self.mqtt_client.connect(
-            host = self.config['address'], 
-            port = self.config['port'], 
-            keepalive = self.config['keepalive']
-        )
+        for i in range(10):
+            try:
+                self.mqtt_client.connect(
+                    host = self.config['address'], 
+                    port = self.config['port'], 
+                    keepalive = self.config['keepalive']
+                )
+            except Exception as exc:
+                print("Failed to connect to MQTT Broker, retrying in 5sec (attempt {}/10)".format(i))
+                print("\tException details: {}".format(exc))
+                time.sleep(5)
+                continue
+            else:
+                break
+        else:
+            # network is down, act accordingly        
+            print("There's a connection problem!")
+            sys.exit(1)
+
         self.mqtt_client.loop_start()
 
     def publish(self, subtopic, payload, qos=1):

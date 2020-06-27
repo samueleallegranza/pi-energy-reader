@@ -1,10 +1,11 @@
 [Unit]
 Description=EnergyReader
-After=network.target
+Wants=network-online.target
+After=network-online.target
 StartLimitIntervalSec=0
 
 [Service]
-ExecStart=/home/pi/piEnergyReader/venv/bin/python3 -u start.py
+ExecStart=/home/pi/piEnergyReader/venv/bin/python3 -u start.py /home/pi/piEnergyReader_config
 WorkingDirectory=/home/pi/piEnergyReader
 StandardOutput=inherit
 StandardError=inherit
